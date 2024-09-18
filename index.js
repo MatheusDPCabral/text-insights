@@ -1,6 +1,23 @@
 const apiKey = 'AIzaSyCyMkAToVBW9DcALMUjCi_X6NrVeFOPE_M';
 const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}&sort=popularity`;
 
+// Função para carregar a fonte selecionada dinamicamente
+function carregarFonte(fontFamily) {
+    // Remover fontes anteriores
+    const existingLinks = document.querySelectorAll('link[rel="stylesheet"][data-font-family]');
+    existingLinks.forEach(link => {
+        if (link.getAttribute('data-font-family') !== fontFamily) {
+            document.head.removeChild(link);
+        }
+    });
+
+    const link = document.createElement('link');
+    link.href = `https://fonts.googleapis.com/css2?family=${fontFamily.replace(/ /g, '+')}&display=swap`;
+    link.rel = 'stylesheet';
+    link.setAttribute('data-font-family', fontFamily);
+    document.head.appendChild(link);
+}
+
 // Função para atualizar as fontes
 function atualizarFontes() {
     fetch(url)
@@ -23,8 +40,7 @@ function atualizarFontes() {
                 // Aplicar a fonte selecionada ao input de texto e à tabela
                 a.addEventListener('click', function () {
                     const fontFamily = fonte.family;
-                    
-                    // Aplicar a fonte ao campo de entrada e à tabela
+                    carregarFonte(fontFamily); // Carregar a fonte dinamicamente
                     document.querySelector('.form-control').style.fontFamily = fontFamily;
                     atualizarTabelaComFonte(fontFamily);
                 });
@@ -37,7 +53,7 @@ function atualizarFontes() {
 function atualizarTabelaComFonte(fontFamily) {
     const tabela = document.querySelector('.table');
     tabela.style.fontFamily = fontFamily; // Atualiza a fonte da tabela
-    
+
     // Atualizar a tabela com o nome da fonte selecionada
     const fonteCelula = document.querySelector('tbody tr:nth-child(2) td:nth-child(2)');
     fonteCelula.textContent = fontFamily;
