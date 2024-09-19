@@ -19,49 +19,87 @@
                 aria-expanded="false" onclick="atualizarFontes()">
                 Fonte
             </button>
-            <ul class="dropdown-menu">
-            </ul>
+            <ul class="dropdown-menu"></ul>
             <input type="text" class="form-control" placeholder="Insira um texto" aria-label="Insira um texto"
                 aria-describedby="addon-wrapping" oninput="tratarTexto()">
-
         </div>
-        <table class="table table-dark mt-5">
-            <thead>
-                <tr>
-                    <th scope="col">Informação</th>
-                    <th scope="col">Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Tamanho</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Fonte</td>
-                    <td>@default</td>
-                </tr>
-                <tr>
-                    <td>Maiúsculo</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>Minúsculo</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>String Reversa</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>Quantidade de caracteres repetidos</td>
-                    <td>-</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="row mt-5">
+            <div class="col">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Informação</th>
+                            <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tamanho</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Fonte</td>
+                            <td>Default</td>
+                        </tr>
+                        <tr>
+                            <td>Maiúsculo</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Minúsculo</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>String Reversa</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Quant. Caracteres Repetidos</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <table class="table table-secondary">
+                    <thead>
+                        <tr>
+                            <th scope="col">Informação</th>
+                            <th scope="col">Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>startsWith('a')</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>endsWith('z')</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>replace('a', 'b')</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>slice(0, 5)</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>indexOf('e')</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>includes('test')</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
